@@ -45,10 +45,17 @@ public class ProgramaDS14 {
         System.out.printf("%-5s: %-5s %-10s | %-10s \n", "Preco", "","R$3.30", "R$2.90");
         System.out.println("-----------------------------------\n\n");
         
+        System.out.printf("%-10s Descontos\n", " ");
+        System.out.printf("-----------------------------------\n");
+        System.out.printf("%-5s: %-10s | %-10s \n", "Combustivel", "Gasolina", "Quantidade Litros");
+        System.out.printf("%-5s: %-3s %-6s | %-3s %s \n", "Porcentagem", "","4%", "3%", "ate 20");
+        System.out.printf("%-5s: %-3s %-6s | %-3s %s \n", "Porcentagem", "","6%", "5%", "acima de 20");
+        System.out.println("-----------------------------------\n\n");
+        
         
         Scanner teclado = new Scanner(System.in);
         double descL = 4 * 0.01; 
-        String taxaCom = "";
+        double taxaCom = 0;
         
         float quantL = testFloat(teclado, "Digite a quantidade de Litros necessaria para o tanque do seu automovel: ");
         
@@ -56,19 +63,27 @@ public class ProgramaDS14 {
         
         
         if (tipoCom.equals("g")){
-            taxaCom = "3.30";
+            taxaCom = 3.30;
             
-            if (quantL > 20){
+            if (quantL <= 20){
+                descL = 3 * 0.01;
+            }else{
                 descL = 6 * 0.01;
             }
             
             
         }else if(tipoCom.equals("a")){
+            taxaCom = 2.90;
+            if (quantL <= 20){
+                descL = 4 * 0.01;
+            }else{
+                descL = 5 * 0.01;
+            }
             
         }
         
         System.out.println(descL);
-        double precL = (quantL * Float.parseFloat(taxaCom)) - (quantL * descL); 
+        double precL = (quantL * taxaCom) - (quantL * descL); 
         
         System.out.println(descL);
         
@@ -86,10 +101,8 @@ public class ProgramaDS14 {
     public static int testInt(Scanner teclado, String msg){
         int num;
         
-        while(true){
-            
+        while(true){ 
             try{
-                
                 System.out.println(msg);
                 String entrada = teclado.next();
                 
@@ -108,9 +121,7 @@ public class ProgramaDS14 {
         float num;
         
         while(true){
-            
             try{
-                
                 System.out.println(msg);
                 String entrada = teclado.next();
                 
@@ -127,12 +138,14 @@ public class ProgramaDS14 {
     public static String testResp(Scanner teclado, String msg){
         String resp = "";
         String entrada = ""; 
-
+        
         while(!entrada.equals("g") && !entrada.equals("a"))
         {
             System.out.println(msg);
             entrada = teclado.next();
-            if(entrada.substring(0, 1).toLowerCase().equals("g") || entrada.substring(0, 1).toLowerCase().equals("a")){
+            entrada = entrada.substring(0, 1).toLowerCase();
+            
+            if(entrada.equals("g") || entrada.equals("a")){
                 resp = entrada; 
             }else{
                 System.out.println("\n\nEntrada invalida, por favor, escolha entre alcool ou gasolina!");
