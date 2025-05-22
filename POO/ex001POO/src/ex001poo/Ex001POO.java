@@ -14,7 +14,9 @@ public class Ex001POO {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Carro carros[] = new Carro[3];
+        
+        carros[0] = new Carro
     }
     
 }

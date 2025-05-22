@@ -25,8 +25,8 @@ public abstract class Automovel {
     protected boolean direcao;
     protected boolean seta; 
     
-    public abstract int acelerar();
-    public abstract int diminuir();
+    public abstract void acelerar();
+    public abstract void diminuir();
     public abstract void farolLigado();
     public abstract void farolDesligado();
     public abstract void piscaAlertaLigado();

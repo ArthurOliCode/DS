@@ -11,12 +11,12 @@ package ex001poo;
 public class Onibus extends Automovel {
 
     @Override
-    public int acelerar() {
+    public void acelerar() {
         throw new UnsupportedOperationException("Not supported yet."); 
     }
 
     @Override
-    public int diminuir() {
+    public void diminuir() {
         throw new UnsupportedOperationException("Not supported yet."); 
     }
 
