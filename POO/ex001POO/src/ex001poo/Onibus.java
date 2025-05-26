@@ -16,7 +16,7 @@ public class Onibus extends Automovel {
     }
 
     @Override
-    public void diminuir() {
+    public void desacelerar() {
         throw new UnsupportedOperationException("Not supported yet."); 
     }
 
@@ -53,6 +53,16 @@ public class Onibus extends Automovel {
     @Override
     public void buzinar() {
         throw new UnsupportedOperationException("Not supported yet."); 
+    }
+
+    @Override
+    public void ligar() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void desligar() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

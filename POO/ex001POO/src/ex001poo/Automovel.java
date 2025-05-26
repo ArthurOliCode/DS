@@ -12,7 +12,7 @@ public abstract class Automovel {
     //Definindo encapsulamento e herança com uma classe autmóvel
     //Exemplo de Programação orientada a objeto POO
     
-    
+    protected boolean ligado;
     protected int velocidade;
     protected int ano;
     protected String marca;
@@ -22,11 +22,13 @@ public abstract class Automovel {
     protected float valor;
     protected boolean farol;
     protected boolean piscaA;
-    protected boolean direcao;
+    protected String direcao;
     protected boolean seta; 
     
+    public abstract void ligar();
+    public abstract void desligar();
     public abstract void acelerar();
-    public abstract void diminuir();
+    public abstract void desacelerar();
     public abstract void farolLigado();
     public abstract void farolDesligado();
     public abstract void piscaAlertaLigado();
