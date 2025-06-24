@@ -32,6 +32,7 @@ public class Ex001POO {
                     TelaCarro.tela();
                     break;
                 case 2:
+                    TelaMoto.tela();
                     break;
                 case 3:
                     break;
