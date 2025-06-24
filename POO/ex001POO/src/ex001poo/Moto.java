@@ -310,7 +310,6 @@ public class Moto extends Automovel{
         if (isLigado()){
             if (isPiscaA()){
                 System.out.println("\n\nDesligando o pisca alerta: \n");
-
                 for(int c = 0; c <= 4; c++){
                     if (c == 0){
                         System.out.println("  /\\");
@@ -448,6 +447,38 @@ public class Moto extends Automovel{
         }
         
     }
+    
+    
+    public void usarCapacete() {
+        String[] frames = {
+            "  _______      \n /       \\    \n|         |   \n \\_______/    ",  // Capacete suspenso
+            "    |          \n  __|__       \n /_____\\      \n|  O O  |     ",  // Descendo
+            "  .-----._     \n /  o o  \\    \n|    ∆    |   \n \\_______/    ",  // Quase encaixado
+            "  ___________  \n /  HELMET  \\ \n|   SAFETY   |\n \\___________/"   // Capacete ajustado :cite[3]
+        };
+        for (String frame : frames) {
+            System.out.println(frame);
+            wait(300);
+        }
+        System.out.println("Capacete seguro! 🛡️");
+    }
+    
+    
+    public void empinar() {
+        String[] frames = {
+            "   ____        \n _/____\\_      \n()  ||  ()     \n    oo         ",  // Posição inicial
+            "   ____        \n _/    \\_      \n()  ||  ()     \n   /  \\        \n  o    o       ",  // Inclinação 25°
+            "   ____        \n /     \\       \n()  ||  ()     \n  /    \\       \n o      o      ",  // Inclinação 45° :cite[2]
+            "  ____         \n /    \\        \n() || ()       \n /      \\      \no        o     ",  // Inclinação 70°
+            "  _            \n / \\_          \n() | ()        \n/       \\_     \no         o    "   // Wheelie completo (~90°)
+        };
+        for (String frame : frames) {
+            System.out.println(frame);
+            wait(400);
+        }
+        System.out.println("empinando! 🏍️💨");
+    }
+    
     
     public static int testInt(Scanner teclado, String msg){
         int num;
