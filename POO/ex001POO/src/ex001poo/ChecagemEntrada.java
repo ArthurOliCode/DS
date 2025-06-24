@@ -48,4 +48,14 @@ public class ChecagemEntrada {
         }
         return resp;
     }
+    
+    public static String testPortaMalas(Scanner teclado, String msg){
+        System.out.println(msg);
+        String resp = teclado.next().strip().toLowerCase().substring(0, 1);
+        while(!resp.equals("a") && !resp.equals("f")){
+            System.out.println("\nDigite uma resposta valida: [a : abrir] [f : fechar]");
+            resp = teclado.next().strip().toLowerCase().substring(0,1);
+        }
+        return resp;
+    }
 }

@@ -25,7 +25,8 @@ public class TelaCarro {
                            |   5  Seta            |
                            |   6  Direcao         |
                            |   7  Buzinar         |
-                           |   8  Sair            |
+                           |   8  Buzinar         |
+                           |   9  Sair            |
                            ------------------------
                            """);
             
@@ -74,6 +75,14 @@ public class TelaCarro {
                     carro[0].buzinar();
                     break;
                 case 8:
+                    respTemp = ChecagemEntrada.testPortaMalas(teclado, "Deseja abrir ou fechar o porta-malas?: [a : abrir] [f : fechar]");
+                    if(respTemp.equals("a")){
+                        carro[0].abrirPortaMalas();
+                    }else{
+                        carro[0].fecharPortaMalas();
+                    }
+                    break;
+                case 9:
                     continuar = ChecagemEntrada.testSimNao(teclado, "\nVoce deseja continuar: [s : sim] [n : nao]\n");
                     break;
             }

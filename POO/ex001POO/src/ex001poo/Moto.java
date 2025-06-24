@@ -227,8 +227,20 @@ public class Moto extends Automovel{
                 System.out.println("\n\nLigando os farois: \n\n");
                 for (int c = 0; c < 2; c++){
                     if(c == 0){
-                        System.out.println("");
-                    }
+                       System.out.println("  o___o ");
+                       wait(200);
+                       System.out.println(" -- I  ");
+                       wait(200);
+                       System.out.println("o   o");
+                       wait(200);
+                   }else{
+                       System.out.println("  o___o - -");
+                       wait(200);
+                       System.out.println(" --`I  ``");
+                       wait(200);
+                       System.out.println("o   o    ``");
+                       wait(200);
+                   }
                     wait(600);
 
                 }
