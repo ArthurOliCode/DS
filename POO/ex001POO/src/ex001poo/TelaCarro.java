@@ -25,8 +25,9 @@ public class TelaCarro {
                            |   5  Seta            |
                            |   6  Direcao         |
                            |   7  Buzinar         |
-                           |   8  Buzinar         |
-                           |   9  Sair            |
+                           |   8  Porta-Malas     |
+                           |   9  Ar condicionado |
+                           |   10  Sair            |
                            ------------------------
                            """);
             
@@ -83,6 +84,14 @@ public class TelaCarro {
                     }
                     break;
                 case 9:
+                    respTemp = ChecagemEntrada.testSimNao(teclado, "Deseja ligar o ar condicionado?: [s : sim] [n : nao]");
+                    if(respTemp.equals("s")){
+                        carro[0].ligarArCondicionado();
+                    }else{
+                        carro[0].desligarArCondicionado();
+                    }
+                    break;
+                case 10:
                     continuar = ChecagemEntrada.testSimNao(teclado, "\nVoce deseja continuar: [s : sim] [n : nao]\n");
                     break;
             }

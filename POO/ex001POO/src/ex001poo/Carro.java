@@ -28,7 +28,8 @@ public class Carro extends Automovel{
     private String direcao;
     private boolean seta; 
     private boolean portaMalas;
-    
+    private boolean arcondicionado;
+
     private Scanner teclado = new Scanner(System.in);
 
     public Carro(int velocidade, int ano, String marca, float combus, boolean ingnicao) {
@@ -161,6 +162,14 @@ public class Carro extends Automovel{
 
     public void setPortaMalas(boolean portaMalas) {
         this.portaMalas = portaMalas;
+    }
+    
+    public boolean isArcondicionado() {
+        return arcondicionado;
+    }
+
+    public void setArcondicionado(boolean arcondicionado) {
+        this.arcondicionado = arcondicionado;
     }
     
     @Override
@@ -510,6 +519,52 @@ public class Carro extends Automovel{
             System.out.println("Porta-malas fechado com seguranca! 🔒\n\n\n");
         }else{
             System.out.println("Nao foi possivel fechar o porta-malas, justamente porque ele ja esta fechado.");
+        }
+    }
+    
+    public void ligarArCondicionado() {
+        if(isLigado() && !isArcondicionado()){
+            setArcondicionado(true);
+            System.out.println("Ligando ar condicionado...");
+            for (int i = 0; i < 5; i++) {
+                System.out.println("  _________");
+                System.out.println(" |  AR-15°C |");
+                System.out.println(" |---------|");
+                System.out.print(" |");
+                for (int j = 0; j < i; j++) {
+                    System.out.print("❄️");
+                }
+                System.out.println("|");
+                System.out.println(" |_________|");
+                wait(300);
+            }
+            System.out.println("Ar condicionado ligado!");
+        }else{
+            System.out.println("Nao foi possivel ligar o ar condicionado, pois, o motor deve estar ligado primeiramente!");
+        }
+    }
+    
+    
+     public void desligarArCondicionado() {
+        if(isLigado() && isArcondicionado()){
+            System.out.println("Desligando ar condicionado...");
+            for (int i = 0; i < 5; i++) {
+                System.out.println("  _________");
+                System.out.println(" |  AR- --°C |");
+                System.out.println(" |---------|");
+                System.out.print(" |");
+                for (int j = 0; j < i; j++) {
+                    System.out.print("-️");
+                }
+                System.out.println("|");
+                System.out.println(" |_________|");
+                wait(300);
+            }
+            System.out.println("Ar condicionado desligado!");
+        }else if(!isLigado()){
+            System.out.println("Nao foi possivel ligar o ar condicionado, pois, o motor deve estar ligado primeiramente!");
+        }else if(!isArcondicionado()){
+            System.out.println("O ar condicionado já está desligado!");
         }
     }
 
