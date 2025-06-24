@@ -203,7 +203,7 @@ public class Moto extends Automovel{
     @Override
     public void desacelerar() {
         if (isLigado()){
-            int vel = testInt(teclado, "\n\nDigite um valor valido para desacelerar o carro: ");
+            int vel = testInt(teclado, "\n\nDigite um valor valido para desacelerar a moto: ");
             if (getVelocidade() >= 0 && vel > 0){
                 if (getVelocidade() - vel >= 0){
                     setVelocidade(getVelocidade() - vel);
@@ -227,26 +227,7 @@ public class Moto extends Automovel{
                 System.out.println("\n\nLigando os farois: \n\n");
                 for (int c = 0; c < 2; c++){
                     if(c == 0){
-                        System.out.println("      / /");
-                    }else{
-                        System.out.println("  |   / /");
-                    }
-
-                    if(c == 0){
-                         System.out.println("---  / /");
-                    }else{
-                        System.out.println("  |  / /");
-                    }
-                    System.out.println("  |O - -");
-                    if(c == 0){
-                        System.out.println("  |  ` `");
-                    }else{
-                        System.out.println("---  ` `");
-                    }
-                    if( c == 0){
-                        System.out.println("  |   ` `");
-                    }else{
-                        System.out.println("      ` `");
+                        System.out.println("");
                     }
                     wait(600);
 
@@ -439,12 +420,19 @@ public class Moto extends Automovel{
     public void pedal(boolean estacionar){
         if(isLigado()){
             if(estacionar){
-            System.out.println("");
+                System.out.println("Descendo o pedal....");
+                wait(1000);
+                System.out.println("    \\");
+                wait(500);
+                System.out.println("/---==O");
+                wait(500);
+                System.out.println(" O /  O");
+                wait(500);
             }else{
-            
+                System.out.println("\nÉ necessário que a moto esteja devidamente estacionada!\n\n");
             }
         }else{
-            System.out.println("E necessario primeiramente ligar a ingnicao do motor!\n\n");
+            System.out.println("\nE necessario primeiramente ligar a ingnicao do motor!\n\n");
         }
         
     }
@@ -482,4 +470,4 @@ public class Moto extends Automovel{
     
 
 }
-}
+
