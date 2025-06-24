@@ -451,7 +451,7 @@ public class Moto extends Automovel{
     
     public void usarCapacete() {
         String[] frames = {
-            "  _______      \n /       \\    \n|         |   \n \\_______/    ",  // Capacete suspenso
+            "  _______      \n/       \\    \n|         |   \n \\_______/    ",  // Capacete suspenso
             "    |          \n  __|__       \n /_____\\      \n|  O O  |     ",  // Descendo
             "  .-----._     \n /  o o  \\    \n|    ∆    |   \n \\_______/    ",  // Quase encaixado
             "  ___________  \n /  HELMET  \\ \n|   SAFETY   |\n \\___________/"   // Capacete ajustado :cite[3]
@@ -460,7 +460,7 @@ public class Moto extends Automovel{
             System.out.println(frame);
             wait(300);
         }
-        System.out.println("Capacete seguro! 🛡️");
+        System.out.println("Capacete seguro! ?️");
     }
     
     
@@ -476,7 +476,7 @@ public class Moto extends Automovel{
             System.out.println(frame);
             wait(400);
         }
-        System.out.println("empinando! 🏍️💨");
+        System.out.println("empinando!");
     }
     
     

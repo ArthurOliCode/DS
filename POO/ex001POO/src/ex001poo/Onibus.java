@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author CAMARGO
+ * @author ArthurOliCode
  */
 public class Onibus extends Automovel {
 
@@ -30,7 +30,7 @@ public class Onibus extends Automovel {
     private String direcao;
     private boolean seta;
     private boolean portaAberta;
-    protected Scanner teclado;
+    private Scanner teclado = new Scanner(System.in);
 
     public Onibus(boolean ligado, String id, int rodas, boolean portaAberta) {
         this.ligado = ligado;
@@ -461,17 +461,28 @@ public class Onibus extends Automovel {
     }
     
     public void abrirPortaoTraseiro() {
-        System.out.println("Portão traseiro aberto para embarque");
+        System.out.println("\nPortão traseiro aberto para embarque.\n\n");
     }
 
+     public void fecharPortaoTraseiro() {
+        System.out.println("\nPortão traseiro de embarque fechado.\n\n");
+    }
+     
     public void cobrarPassagem(double valor) {
-        System.out.printf("Passagem cobrada: R$ %.2f%n", valor);
+        System.out.printf("\nPassagem cobrada: R$ %.2f%n\n\n", valor);
     }
 
     public void usarElevadorCadeirante() {
-        System.out.println("Elevador para cadeirantes acionado!");
+        System.out.println("\nElevador para cadeirantes acionado!\n\n");
     }
     
- 
+    public void identificacao(){
+        System.out.println("Digite 5 dígitos entre numeros e letras para definir a placa");
+        String placa = "";
+        while(placa.length() < 5){
+            placa = teclado.next();
+        }
+        setId(placa);
+    }
     
 }

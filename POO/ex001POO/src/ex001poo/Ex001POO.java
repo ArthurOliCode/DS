@@ -35,6 +35,7 @@ public class Ex001POO {
                     TelaMoto.tela();
                     break;
                 case 3:
+                    TelaOnibus.tela();
                     break;
                 default:
                     resp = ChecagemEntrada.testSimNao(teclado, "Deseja Continuar? : ");
