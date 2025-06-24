@@ -201,71 +201,120 @@ public class Onibus extends Automovel {
     
     @Override
     public void farolLigado() {
-        if (isLigado()){
-            if (!isFarol()){
-                setFarol(true);
-                System.out.println("\n\nLigando os farois: \n\n");
-                for (int c = 0; c < 2; c++){
-                    if(c == 0){
-                        System.out.println("      / /");
-                    }else{
-                        System.out.println("  |   / /");
-                    }
+        if (!isFarol() && isLigado()) {
+            System.out.println("Ligando farois do onibus...");
+            String[] frames = {
+                // Quadro 1: Desligado
+                "   ___________________________\n" +
+                "  /                           \\\n" +
+                " |                             |\n" +
+                " |  [ ]                  [ ]   |\n" +
+                " |                             |\n" +
+                " |     Companhia de Onibus     |",
 
-                    if(c == 0){
-                         System.out.println("---  / /");
-                    }else{
-                        System.out.println("  |  / /");
-                    }
-                    System.out.println("  |O - -");
-                    if(c == 0){
-                        System.out.println("  |  ` `");
-                    }else{
-                        System.out.println("---  ` `");
-                    }
-                    if( c == 0){
-                        System.out.println("  |   ` `");
-                    }else{
-                        System.out.println("      ` `");
-                    }
-                    Carro.wait(600);
+                // Quadro 2: Início da iluminação
+                "   ___________________________\n" +
+                "  /                           \\\n" +
+                " |                             |\n" +
+                " |  [•]                  [•]    |\n" +
+                " |                             |\n" +
+                " |     Companhia de Onibus     |",
 
-                }
-            }else{
-                System.out.println("O farol já esta desligado! \n\n");
+                // Quadro 3: Luz média
+                "   ___________________________\n" +
+                "  /                            \\\n" +
+                " |                              |\n" +
+                " |  [◦]                  [◦]   |\n" +
+                " |     \\                 /     |\n" +
+                " |     Companhia de Onibus      |",
+
+                // Quadro 4: Luz forte
+                "   ___________________________\n" +
+                "  /                            \\\n" +
+                " |                             |\n" +
+                " |  [O]                  [O]   |\n" +
+                " |    \\\\               //    |\n" +
+                " |     Companhia de Onibus      |",
+
+                // Quadro 5: Totalmente ligado
+                "   ____________________________\n" +
+                "  /                            \\\n" +
+                " |                              |\n" +
+                " |  [█]                  [█]   |\n" +
+                " |   \\\\\\\\           ////    |\n" +
+                " |     Companhia de Onibus      |"
+            };
+
+            for (String frame : frames) {
+                System.out.println(frame);
+                Carro.wait(300);
             }
-        }else{
-            System.out.println("E necessario primeiramente ligar a ingnicao do motor!\n\n");
-        } 
+            setFarol(true);
+            System.out.println("Farois ligados! 💡");
+        }else if(isFarol()){
+            System.out.println("\nO farol já está ligado!\n\n");
+        }else if(!isLigado()){
+            System.out.println("\nO motor não está ligado!\n\n");
+        }
     }
 
     @Override
     public void farolDesligado() {
-        if(isLigado()){
-            if(isFarol()){
-                System.out.println("\n\nDesligando os farois: \n\n");
-                for(int c = 0; c < 2; c++){
-                    if(c == 0){
-                        System.out.println("---   /");
-                    }else{
-                        System.out.println("   |");
-                        System.out.println("   |  /");
-                    }
-                    System.out.println("   |O -");
-                    if(c == 0){
-                        System.out.println("   |  `");
-                    }else{
-                        System.out.println("---   `");
-                    }
-                    Carro.wait(600);
-                }
-            }else{
-                System.out.println("O farol ja esta desligado!\n\n");
+        if (isFarol() && isLigado()) {
+            System.out.println("Desligando farois do onibus...");
+            String[] frames = {
+                // Quadro 1: Ligado
+                "   ____________________________\n" +
+                "  /                             \\\n" +
+                " |                               |\n" +
+                " |  [█]                  [█]    |\n" +
+                " |   \\\\\\\\           ////     |\n" +
+                " |     Companhia de Onibus       |",
+
+                // Quadro 2: Luz diminuindo
+                "   ____________________________\n" +
+                "  /                            \\\n" +
+                " |                             |\n" +
+                " |  [O]                  [O]   |\n" +
+                " |    \\\\               //    |\n" +
+                " |     Companhia de Onibus     |",
+
+                // Quadro 3: Luz fraca
+                "   ____________________________\n" +
+                "  /                            \\\n" +
+                " |                              |\n" +
+                " |  [◦]                  [◦]   |\n" +
+                " |     \\                 /     |\n" +
+                " |     Companhia de Onibus      |",
+
+                // Quadro 4: Quase apagado
+                "   ____________________________\n" +
+                "  /                            \\\n" +
+                " |                             |\n" +
+                " |   [•]                  [•]   |\n" +
+                " |                             |\n" +
+                " |     Companhia de Onibus     |",
+
+                // Quadro 5: Desligado
+                "   ___________________________\n" +
+                "  /                           \\\n" +
+                " |                             |\n" +
+                " |  [ ]                  [ ]   |\n" +
+                " |                             |\n" +
+                " |     Companhia de Onibus     |"
+            };
+
+            for (String frame : frames) {
+                System.out.println(frame);
+                Carro.wait(300);
             }
-        }else{
-            System.out.println("E necessario primeiramente ligar a ingnicao do motor!\n\n");
-        } 
-        
+            setFarol(false);
+            System.out.println("Farois desligados!");
+        }else if(!isFarol()){
+            System.out.println("\nO farol já está desligado!\n\n");
+        }else if(!isLigado()){
+            System.out.println("\nO motor não está ligado!\n\n");
+        }
     }
 
     @Override
@@ -409,6 +458,18 @@ public class Onibus extends Automovel {
             System.out.println("\nBi-bi!!\n\n");
             Carro.wait(miliSegundos);
         }
+    }
+    
+    public void abrirPortaoTraseiro() {
+        System.out.println("Portão traseiro aberto para embarque");
+    }
+
+    public void cobrarPassagem(double valor) {
+        System.out.printf("Passagem cobrada: R$ %.2f%n", valor);
+    }
+
+    public void usarElevadorCadeirante() {
+        System.out.println("Elevador para cadeirantes acionado!");
     }
     
  
