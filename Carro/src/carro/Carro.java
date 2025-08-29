@@ -46,12 +46,18 @@ public class Carro extends Automovel{
     
     public double calcularMaiorPreco(double preco1, double preco2, double preco3){
         double maiorPreco = preco1;
-        if(preco2 > maiorPreco){
+        if(preco1 > 0 && preco2 > 0 && preco3 > 0){
+            if(preco2 > maiorPreco){
             maiorPreco = preco2;
-        }else if(preco3 > maiorPreco){
-            maiorPreco = preco3;
+            }else if(preco3 > maiorPreco){
+                maiorPreco = preco3;
+            }
+            return maiorPreco;
+        }else{
+            System.out.println("Impossivel realizar a operação com precos abaixo ou igual a zero");
+            return 0;
         }
-        return maiorPreco;
+        
     }
    
     @Override
