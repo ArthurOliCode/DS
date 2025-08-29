@@ -63,29 +63,15 @@ public abstract class Automovel {
     public void setPrecoAno3(double precoAno3) {
         this.precoAno3 = precoAno3;
     }
-    
-    
-    public double calcularMenorPreco(double preco1, double preco2, double preco3){
-        double menorPreco = preco1;
-        if(preco2 < menorPreco){
-            menorPreco = preco2;
-        }else if(preco3 < menorPreco){
-            menorPreco = preco3;
-        }
-        return menorPreco;
+
+    @Override
+    public String toString() {
+        return "Automovel{" + "marca=" + marca + ", nomeModelo=" + nomeModelo + ", anoOrigem=" 
+                + anoOrigem + ", precoAno1=" + precoAno1 + ", precoAno2=" + precoAno2 + ", precoAno3=" 
+                + precoAno3 + '}';
     }
     
-    public double calcularMaiorPreco(double preco1, double preco2, double preco3){
-        double maiorPreco = preco1;
-        if(preco2 > maiorPreco){
-            maiorPreco = preco2;
-        }else if(preco3 > maiorPreco){
-            maiorPreco = preco3;
-        }
-        return maiorPreco;
-    }
-   
-   
+    
 }
 
 

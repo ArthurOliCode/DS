@@ -6,76 +6,60 @@ package carro;
 
 /**
  *
- * @author CAMARGO
+ * @author arthu_uhkw4r8
  */
 public class Carro extends Automovel{
+    protected int combus;
+    protected int velocidade;
 
-    @Override
-    public double calcularMaiorPreco(double preco1, double preco2, double preco3) {
-        return super.calcularMaiorPreco(preco1, preco2, preco3); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    public Carro(int combus, int velocidade) {
+        this.combus = combus;
+        this.velocidade = velocidade;
     }
 
-    @Override
-    public double calcularMenorPreco(double preco1, double preco2, double preco3) {
-        return super.calcularMenorPreco(preco1, preco2, preco3); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    public int getCombus() {
+        return combus;
     }
 
-    @Override
-    public void setPrecoAno3(double precoAno3) {
-        super.setPrecoAno3(precoAno3); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    public void setCombus(int combus) {
+        this.combus = combus;
     }
 
-    @Override
-    public double getPrecoAno3() {
-        return super.getPrecoAno3(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    public int getVelocidade() {
+        return velocidade;
     }
 
-    @Override
-    public void setPrecoAno2(double precoAno2) {
-        super.setPrecoAno2(precoAno2); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    public void setVelocidade(int velocidade) {
+        this.velocidade = velocidade;
     }
-
-    @Override
-    public double getPrecoAno2() {
-        return super.getPrecoAno2(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    
+    
+    public double calcularMenorPreco(double preco1, double preco2, double preco3){
+        double menorPreco = preco1;
+        if(preco2 < menorPreco){
+            menorPreco = preco2;
+        }else if(preco3 < menorPreco){
+            menorPreco = preco3;
+        }
+        return menorPreco;
     }
-
-    @Override
-    public void setPrecoAno1(double precoAno1) {
-        super.setPrecoAno1(precoAno1); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    
+    public double calcularMaiorPreco(double preco1, double preco2, double preco3){
+        double maiorPreco = preco1;
+        if(preco2 > maiorPreco){
+            maiorPreco = preco2;
+        }else if(preco3 > maiorPreco){
+            maiorPreco = preco3;
+        }
+        return maiorPreco;
     }
-
+   
     @Override
-    public double getPrecoAno1() {
-        return super.getPrecoAno1(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    public String toString() {
+     return "Carro{" + "marca=" + marca + ", nomeModelo=" + nomeModelo + ", anoOrigem=" 
+                + anoOrigem + ", precoAno1=" + precoAno1 + ", precoAno2=" + precoAno2 + ", precoAno3=" 
+                + precoAno3 + ", combustivel: "+ combus + ", velocidade" + velocidade + '}' ;
     }
-
-    @Override
-    public void setAnoOrigem(int anoOrigem) {
-        super.setAnoOrigem(anoOrigem); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
-    }
-
-    @Override
-    public int getAnoOrigem() {
-        return super.getAnoOrigem(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
-    }
-
-    @Override
-    public void setNomeModelo(String nomeModelo) {
-        super.setNomeModelo(nomeModelo); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
-    }
-
-    @Override
-    public String getNomeModelo() {
-        return super.getNomeModelo(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
-    }
-
-    @Override
-    public void setMarca(String marca) {
-        super.setMarca(marca); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
-    }
-
-    @Override
-    public String getMarca() {
-        return super.getMarca(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
-    }
+    
+    
+}
