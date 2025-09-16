@@ -21,7 +21,7 @@ public class Atividade_01 {
         
         String frase = "Hello Word";
         System.out.println("");
-        System.out.printf("%10s", frase);
+        System.out.printf("%4s %s %n", "",frase);
         c = 0;
         
         while(c < 20){
