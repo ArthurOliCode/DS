@@ -29,4 +29,24 @@ public class Atividade_01 {
             c++;
         }
     }
+    
+    public void msgSaida(String entrada){
+        int c = 0; // Variável temporária com função de contador.
+        
+        while(c < (entrada.length() * 2)){
+            System.out.printf("-");
+            c++;
+        }
+        
+        String frase = entrada;
+        System.out.println("");
+        System.out.printf("%10s %s %n", "",frase);
+        c = 0;
+        
+        while(c < (entrada.length() * 2)){
+            System.out.printf("-");
+            c++;
+        }
+        System.out.println("");
+    }
 }
