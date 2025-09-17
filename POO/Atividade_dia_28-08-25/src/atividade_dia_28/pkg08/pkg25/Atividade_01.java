@@ -13,9 +13,7 @@ public class Atividade_01 {
     
     public void HelloWord(){
         Testes.linhas(24, "-", false);
-        
         String frase = "Hello Word";
-        System.out.println("");
         System.out.printf("%4s %s %n", "",frase);
         Testes.linhas(24, "-", true);
     }

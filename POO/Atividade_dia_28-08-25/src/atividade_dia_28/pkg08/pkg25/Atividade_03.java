@@ -14,8 +14,18 @@ public class Atividade_03 {
     int num1;
     int num2;
     int soma;
+    int sub;
     int multi;
     double div;
+    
+    public int getSub() {
+        return sub;
+    }
+
+    public void setSub(int sub) {
+        this.sub = sub;
+    }
+
 
     public double getDiv() {
         return div;
@@ -104,6 +114,18 @@ public class Atividade_03 {
             
             Testes.linhas(1, "", false);
             System.out.printf("A divisao de %d e %d e igual a %.3f!", getNum1(), getNum2(), getDiv());
+        }else
+        if(escolha.toLowerCase().substring(0, 2).equals("su")){
+            Testes.titulo("Bem vindo ao Subtracao!");
+            
+            setNum1(Testes.testInt(teclado, "Insira o primeiro numero: "));
+            setNum2(Testes.testInt(teclado, "Insira o segundo numero: "));
+            if(getNum1() >= getNum2()){
+                setSub(getNum1() - getNum2());
+            }else{
+                setSub(getNum2() - getNum1());
+            }
+            System.out.printf("A divisao de %d e %d e igual a %d!", getNum1(), getNum2(), getSub());
         }
         else{
             Testes.titulo("Nenhuma operacao valida");
