@@ -18,6 +18,15 @@ public class Atividade_02 {
     boolean estudante;
     String nome;
     String frase;
+    String cidade;
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
 
     public Scanner getTeclado() {
         return teclado;
@@ -72,13 +81,14 @@ public class Atividade_02 {
     public void aluno(){
         
         prints.msgSaida("Ola, seja bem vindo!");
-        setNome(Testes.testNome(teclado, "Insira seu nome: "));
+        setNome(Testes.testString(teclado, "Insira seu nome: ", 3));
         setIdade(Testes.testInt(teclado, "Qual a sua idade: "));
         setTamanho(Testes.testDouble(teclado, "Nos informe seu tamanho em metros: "));
         setFrase(Testes.testFrase(teclado, "Insira uma frase que nao seja vazia: "));
         setEstudante(Testes.estudante(teclado, "Agora iremos avaliar se voce e um estudante: "));
+        setCidade(Testes.testString(teclado, "Insira sua cidade: ", 3));
         
-        Testes.resultadosEstudante(getIdade(), getTamanho(), isEstudante(), getNome(), getFrase());
+        Testes.resultadosEstudante(getIdade(), getTamanho(), isEstudante(), getNome(), getFrase(), getCidade());
         
     }
     
