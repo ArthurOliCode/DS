@@ -32,8 +32,10 @@ public class Atividade_04 {
 
 
     public void conversao(){
-        Testes.titulo("Bem vindo ao Conversor");
+        Atividade_02 aluno = new Atividade_02();
         
+        Testes.titulo("Bem vindo ao Conversor");
+        aluno.setNome(Testes.testString(teclado, "Insira seu nome: ", 3));
         setCelsius(Testes.testInt(teclado, "Qual é a temperatura (em celsius) para que convertamos? "));
         setFaren(((getCelsius() * 9)/5 + 32));
         Testes.titulo("Resultados");
@@ -41,6 +43,7 @@ public class Atividade_04 {
         System.out.println("| Temperatura: Celsius | Farenheit|");
         System.out.printf("|%14s %6d | %.2f %3s|\n", "", getCelsius(), getFaren(), "");
         Testes.linhas(34, "-", true);
+        System.out.printf("Obrigado por utilizar o programa %s \n", aluno.getNome());
     }
     
 }

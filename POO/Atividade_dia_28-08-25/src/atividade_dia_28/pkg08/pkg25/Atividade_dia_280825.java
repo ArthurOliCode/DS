@@ -17,7 +17,7 @@ public class Atividade_dia_280825 {
         Atividade_01 msg = new Atividade_01();
         
         msg.HelloWord();
-        
+  
         Atividade_02 alunos [];
         alunos = new Atividade_02[10];
         alunos[0] = new Atividade_02();
@@ -33,6 +33,7 @@ public class Atividade_dia_280825 {
         temp = new Atividade_04[10];
         temp[0] = new Atividade_04();
         temp[0].conversao();
+
     }
     
 }

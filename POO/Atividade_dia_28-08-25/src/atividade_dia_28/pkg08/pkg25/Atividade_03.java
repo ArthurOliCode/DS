@@ -77,9 +77,11 @@ public class Atividade_03 {
     
     public void operacoes(){
         String escolha = "";
+        Atividade_02 aluno = new Atividade_02();
         
         System.out.println("Você deseja fazer qual operacao? ");
         escolha = teclado.nextLine();
+        aluno.setNome(Testes.testString(teclado, "Qual seria seu nome: ", 3));
         
         if(escolha.toLowerCase().substring(0, 2).equals("so")){
             Testes.titulo("Bem vindo ao Soma!");
@@ -88,7 +90,9 @@ public class Atividade_03 {
             setNum2(Testes.testInt(teclado, "Insira o segundo numero: "));
             setSoma(getNum1() + getNum2());
             Testes.linhas(1, "", false);
-            System.out.printf("A soma de %d e %d e igual a %d!", getNum2(), getNum1(), getSoma());
+            System.out.printf("A soma de %d e %d e igual a %d!\n", getNum2(), getNum1(), getSoma());
+            System.out.printf("Obrigado por utilizar o programa %s!\n", aluno.getNome());
+            Testes.linhas(40, "-", true);
             
         }else
         if(escolha.toLowerCase().substring(0, 1).equals("m")){
@@ -98,7 +102,9 @@ public class Atividade_03 {
             setNum2(Testes.testInt(teclado, "Insira o segundo numero: "));
             setMulti(num1 * num2);
             Testes.linhas(1, "", false);
-            System.out.printf("A multiplicacao de %d e %d e igual a %d!", getNum1(), getNum2(), getMulti());
+            System.out.printf("A multiplicacao de %d e %d e igual a %d!\n", getNum1(), getNum2(), getMulti());
+            System.out.printf("Obrigado por utilizar o programa %s!\n", aluno.getNome());
+            Testes.linhas(40, "-", true);
             
         }else
         if(escolha.toLowerCase().substring(0, 3).equals("div")){
@@ -113,7 +119,9 @@ public class Atividade_03 {
             }
             
             Testes.linhas(1, "", false);
-            System.out.printf("A divisao de %d e %d e igual a %.3f!", getNum1(), getNum2(), getDiv());
+            System.out.printf("A divisao de %d e %d e igual a %.3f!\n", getNum1(), getNum2(), getDiv());
+            System.out.printf("Obrigado por utilizar o programa %s!\n", aluno.getNome());
+            Testes.linhas(40, "-", true);
         }else
         if(escolha.toLowerCase().substring(0, 2).equals("su")){
             Testes.titulo("Bem vindo ao Subtracao!");
@@ -125,7 +133,9 @@ public class Atividade_03 {
             }else{
                 setSub(getNum2() - getNum1());
             }
-            System.out.printf("A divisao de %d e %d e igual a %d!", getNum1(), getNum2(), getSub());
+            System.out.printf("A divisao de %d e %d e igual a %d!\n", getNum1(), getNum2(), getSub());
+            System.out.printf("Obrigado por utilizar o programa %s!\n", aluno.getNome());
+            Testes.linhas(40, "-", true);
         }
         else{
             Testes.titulo("Nenhuma operacao valida");
