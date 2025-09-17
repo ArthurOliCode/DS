@@ -80,13 +80,15 @@ public class Atividade_02 {
     
     public void aluno(){
         
+        Testes.linhas(40, "_", false);
         prints.msgSaida("Ola, seja bem vindo!");
         setNome(Testes.testString(teclado, "Insira seu nome: ", 3));
         setIdade(Testes.testInt(teclado, "Qual a sua idade: "));
         setTamanho(Testes.testDouble(teclado, "Nos informe seu tamanho em metros: "));
+        setCidade(Testes.testString(teclado, "Insira sua cidade: ", 2));
         setFrase(Testes.testFrase(teclado, "Insira uma frase que nao seja vazia: "));
         setEstudante(Testes.estudante(teclado, "Agora iremos avaliar se voce e um estudante: "));
-        setCidade(Testes.testString(teclado, "Insira sua cidade: ", 3));
+
         
         Testes.resultadosEstudante(getIdade(), getTamanho(), isEstudante(), getNome(), getFrase(), getCidade());
         

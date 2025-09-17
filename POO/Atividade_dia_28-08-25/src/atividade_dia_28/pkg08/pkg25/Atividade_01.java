@@ -12,41 +12,21 @@ package atividade_dia_28.pkg08.pkg25;
 public class Atividade_01 {
     
     public void HelloWord(){
-        int c = 0; // Variável temporária com função de contador.
-        
-        while(c < 20){
-            System.out.printf("-");
-            c++;
-        }
+        Testes.linhas(24, "-", false);
         
         String frase = "Hello Word";
         System.out.println("");
         System.out.printf("%4s %s %n", "",frase);
-        c = 0;
-        
-        while(c < 20){
-            System.out.printf("-");
-            c++;
-        }
+        Testes.linhas(24, "-", true);
     }
     
     public void msgSaida(String entrada){
-        int c = 0; // Variável temporária com função de contador.
-        
-        while(c < (entrada.length() * 2)){
-            System.out.printf("-");
-            c++;
-        }
+        Testes.linhas((entrada.length() * 2), "-", false);
         
         String frase = entrada;
         System.out.println("");
         System.out.printf("%10s %s %n", "",frase);
-        c = 0;
-        
-        while(c < (entrada.length() * 2)){
-            System.out.printf("-");
-            c++;
-        }
+        Testes.linhas((entrada.length() * 2), "-", true);
         System.out.println("");
     }
 }

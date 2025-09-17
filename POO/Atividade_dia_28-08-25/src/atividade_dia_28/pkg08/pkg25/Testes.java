@@ -24,7 +24,7 @@ public class Testes {
                 
             }catch(NumberFormatException e){
                 System.out.println("\n\nEntrada invalida, por favor, insira um numero inteiro valido");
-                System.out.println("--------------------------------------------------------\n\n");
+                linhas(50, "-", true);
             }
         }
     }
@@ -42,7 +42,7 @@ public class Testes {
                 
             }catch(NumberFormatException e){
                 System.out.println("\n\nEntrada invalida, por favor, insira um numero valido");
-                System.out.println("--------------------------------------------------------\n\n");
+                linhas(50, "-", true);
             }
         }
     }
@@ -51,16 +51,16 @@ public class Testes {
         String resp = "";
         String entrada = ""; 
         
-        while(entrada.length() <= numLetras)
+        while(entrada.length() < numLetras)
         {
             System.out.println(msg);
             entrada = teclado.nextLine();
             
             if(entrada.length() >= numLetras){
                 resp = entrada; 
-            }else{
+            }else if(entrada.length() < numLetras){
                 System.out.printf("\n\nEntrada invalida, por favor, resultados com menos de %s letras nao serao aceitos!\n", numLetras);
-                System.out.println("------------------------------------------------------------------\n\n");
+                linhas(50, "-", true);
             }
         }
         return resp;       
@@ -78,7 +78,7 @@ public class Testes {
                 return entrada;
             }else{
                 System.out.println("\n\nEntrada invalida, por favor, insira uma frase que nao seja vazia!");
-                System.out.println("------------------------------------------------------------------\n\n");
+                linhas(50, "-", true);
             }
         }
         return entrada;
@@ -96,14 +96,11 @@ public class Testes {
      
      public static void resultadosEstudante(int idade, double tamanho, boolean estudante,
     String nome, String frase, String cidade){
-         int c = 0;
+         
          System.out.printf("%20s %s \n", "", "Resultados");
-         while(c < 40){
-            System.out.printf("=");
-            c++;
-         }
+         linhas(40, "=", false);
          System.out.println("");
-         System.out.printf("Olá %s! Bem vindo!\n\n", nome);
+         System.out.printf("Ola %s! Bem vindo!\n\n", nome);
          
          System.out.printf("Nome: %10s %s \n", "", nome);
          System.out.printf("Idade: %9s %s \n", "", idade);
@@ -112,12 +109,27 @@ public class Testes {
          System.out.printf("estudante: %5s %b \n", "", estudante);
          System.out.println("");
          System.out.printf("%s \n",frase);
-         
-         c = 0;
-         while(c < 40){
-            System.out.printf("=");
-            c++;
+         linhas(40, "=", true);
+     }
+     
+     
+     public static void linhas(int limite, String linha, boolean fim){
+         int c = 0;
+         while(c < limite){
+             System.out.printf(linha);
+             c++;
          }
-         System.out.println("");
+         if(fim){
+             System.out.println("\n\n");
+         }else{
+             System.out.println("");
+         }
+         
+     }
+     
+     public static void titulo(String titulo){
+         linhas(titulo.length() * 2, "=", false);
+         System.out.printf("%4s %s \n", "", titulo);
+         linhas(titulo.length() * 2, "=", true);
      }
 }
