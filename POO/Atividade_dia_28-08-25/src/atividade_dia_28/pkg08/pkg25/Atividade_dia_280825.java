@@ -28,6 +28,11 @@ public class Atividade_dia_280825 {
         ops = new Atividade_03[10];
         ops[0] = new Atividade_03();
         ops[0].operacoes();
+
+        Atividade_04 temp [];
+        temp = new Atividade_04[10];
+        temp[0] = new Atividade_04();
+        temp[0].conversao();
     }
     
 }

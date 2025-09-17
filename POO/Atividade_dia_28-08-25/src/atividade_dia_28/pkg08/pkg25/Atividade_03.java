@@ -6,7 +6,7 @@ package atividade_dia_28.pkg08.pkg25;
 import java.util.Scanner;
 /**
  *
- * @author arthu_uhkw4r8
+ * @author ArthurOliCode
  */
 public class Atividade_03 {
     
