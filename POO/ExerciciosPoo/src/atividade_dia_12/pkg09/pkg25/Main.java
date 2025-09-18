@@ -21,12 +21,17 @@ public class Main {
         p[0].calcIdade();
         int idade = p[0].getIdade();
         System.out.printf("A idade e %d\n", idade);
-        */
+        
         Aluno alunos [] = new Aluno[10];
         alunos[0] = new Aluno("Arthur", "121-357-963-14", 2009, 7, 20);
         alunos[0].calcIdade();
         alunos[0].inserirMatricula();
+        */
         
+        Funcionario funcionarios [] = new Funcionario[10];
+        funcionarios[0] = new Funcionario("Fabio", "983-173-753-48", 2005, 1, 28);
+        funcionarios[0].calcIdade();
+        funcionarios[0].registro();
     }
     
 }

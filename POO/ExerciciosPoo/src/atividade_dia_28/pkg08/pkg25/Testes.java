@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package atividade_dia_28.pkg08.pkg25;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 /**
@@ -46,6 +49,29 @@ public class Testes {
             }
         }
     }
+     
+     public static LocalDate testLocalDate(Scanner teclado, String msg){
+         LocalDate data;
+         DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+         
+         while(true){
+             try{
+                 System.out.println(msg);
+                 System.out.println("Insira os dados na ordem: dd/MM/yyyy");
+                 String entrada = teclado.nextLine();
+                 
+                 data = LocalDate.parse(entrada, formatador);
+                 
+                 return data;
+             }catch (DateTimeParseException e){
+                 System.out.println("Data invalida, digite uma data no formato dd/MM/yyyy");
+                 linhas(50, "-", true);
+             }catch (Exception e){
+                 System.out.println("Entrada invalida, verifique os dados de ano, mes e dia são validos.");
+                 linhas(50, "-", true);
+             }
+         }
+     }
      
      public static String testString(Scanner teclado, String msg, int numLetras){
         String resp = "";
