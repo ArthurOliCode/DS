@@ -4,19 +4,20 @@
  */
 package atividade_dia_12.pkg09.pkg25;
 import atividade_dia_28.pkg08.pkg25.Testes;
+import java.util.Scanner;
 
 /**
  *
  * @author arthu_uhkw4r8
  */
 public class Aluno extends Pessoa_main{
-    int matricula;
+    String matricula;
 
-    public int getMatricula() {
+    public String getMatricula() {
         return matricula;
     }
 
-    private void setMatricula(int matricula) {
+    private void setMatricula(String matricula) {
         this.matricula = matricula;
     }
     
@@ -36,8 +37,11 @@ public class Aluno extends Pessoa_main{
     }
     
     public void inserirMatricula(){
-        System.out.println("");
-        
+       Scanner teclado = new Scanner(System.in);
+       Testes.titulo("Adicionando a matricula");
+       setMatricula(Testes.testString(teclado, "Digite o numero da matricula por extenso", 13));
+       System.out.println("Obrigado por registar!");
+       Testes.linhas(18, "-", true);
     }
     
 }

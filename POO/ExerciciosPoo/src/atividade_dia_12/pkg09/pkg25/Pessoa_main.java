@@ -39,7 +39,7 @@ public class Pessoa_main {
         return idade;
     }
 
-    public void setIdade(int idade) {
+    private void setIdade(int idade) {
         this.idade = idade;
     }
 

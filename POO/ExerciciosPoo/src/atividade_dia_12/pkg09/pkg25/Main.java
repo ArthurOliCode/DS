@@ -15,11 +15,17 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        /*
         Pessoa_main p [] = new Pessoa_main[10];
         p[0] = new Pessoa_main("Arthur", "321-324-763-23", 2007, 12, 18);
         p[0].calcIdade();
         int idade = p[0].getIdade();
         System.out.printf("A idade e %d\n", idade);
+        */
+        Aluno alunos [] = new Aluno[10];
+        alunos[0] = new Aluno("Arthur", "121-357-963-14", 2009, 7, 20);
+        alunos[0].calcIdade();
+        alunos[0].inserirMatricula();
         
     }
     
