@@ -37,6 +37,8 @@ public class Aluno extends Pessoa_main{
     }
     
     public void registro(){
+       Testes.titulo("Bem vindo ao registro aluno");
+       
        Scanner teclado = new Scanner(System.in);
        Aluno.super.calcIdade();
        
@@ -49,7 +51,7 @@ public class Aluno extends Pessoa_main{
        System.out.println("| Matricula   | Idade  ");
        System.out.printf("| %s  | %d |\n", getMatricula(), getIdade());
        Testes.linhas(34, "-", true);
-       System.out.printf("Obrigado por utilizar o programa %s \n", Aluno.super.getNome());
+       System.out.printf("Obrigado por utilizar o programa %s \n\n", Aluno.super.getNome());
     }
     
     

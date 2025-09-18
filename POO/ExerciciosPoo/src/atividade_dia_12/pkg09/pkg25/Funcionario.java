@@ -46,8 +46,10 @@ public class Funcionario extends Pessoa_main{
     }
     
     public void registro(){
+        Testes.titulo("Bem vindo ao registro funcionario");
+        
         Scanner teclado = new Scanner(System.in);
-        Testes.titulo("Bem vindo ao Registro");
+        
         setCargo(Testes.testString(teclado, "Poderia digitar o cargo por favor: ", 5));
         setSalario(Testes.testDouble(teclado, "Poderia digitar o salario?: "));
         setDataAd(Testes.testLocalDate(teclado, "Insira a data de admissao do profissional: "));
@@ -56,7 +58,7 @@ public class Funcionario extends Pessoa_main{
         System.out.println("| Cargo   | Salario  | Data de admissao");
         System.out.printf("|%5s  | %.2f | %s\n", getCargo(), getSalario(), getDataAd());
         Testes.linhas(34, "-", true);
-        System.out.printf("Obrigado por utilizar o programa %s \n", Funcionario.super.getNome());
+        System.out.printf("Obrigado por utilizar o programa %s \n\n", Funcionario.super.getNome());
     }
     
 }

@@ -37,16 +37,18 @@ public class Professor extends Pessoa_main{
     }
     
     public void registro(){
+        Testes.titulo("bem vindo ao registro professor");
+        
         Scanner teclado = new Scanner(System.in);
         
-        setMateria(Testes.testString(teclado, "Informe a disciplina que o professor exerce", 3));
-        setSalario(Testes.testDouble(teclado, "Insira o salario que este professor recebe"));
+        setMateria(Testes.testString(teclado, "Informe a disciplina que o professor exerce:", 3));
+        setSalario(Testes.testDouble(teclado, "Insira o salario que este professor recebe:"));
         
         Testes.linhas(34, "-", false);
         System.out.println("| Materia   | Salario  ");
         System.out.printf("| %5s  | %.2f |\n", getMateria(), getSalario());
         Testes.linhas(34, "-", true);
-        System.out.printf("Obrigado por utilizar o programa %s \n", Professor.super.getNome());
+        System.out.printf("Obrigado por utilizar o programa %s \n\n", Professor.super.getNome());
     }
     
 }
