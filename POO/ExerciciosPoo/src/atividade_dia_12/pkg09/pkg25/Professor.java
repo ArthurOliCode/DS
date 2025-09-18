@@ -4,24 +4,27 @@
  */
 package atividade_dia_12.pkg09.pkg25;
 
+import atividade_dia_28.pkg08.pkg25.Testes;
+import java.util.Scanner;
+
 /**
  *
  * @author arthu_uhkw4r8
  */
 public class Professor extends Pessoa_main{
     
-    private float salario;
+    private double salario;
     private String materia;
     
     public Professor(String nome, String cpf, int ano, int mes, int dia) {
         super(nome, cpf, ano, mes, dia);
     }
 
-    public float getSalario() {
+    public double getSalario() {
         return salario;
     }
 
-    private void setSalario(float salario) {
+    private void setSalario(double salario) {
         this.salario = salario;
     }
 
@@ -33,6 +36,17 @@ public class Professor extends Pessoa_main{
         this.materia = materia;
     }
     
-    
+    public void registro(){
+        Scanner teclado = new Scanner(System.in);
+        
+        setMateria(Testes.testString(teclado, "Informe a disciplina que o professor exerce", 3));
+        setSalario(Testes.testDouble(teclado, "Insira o salario que este professor recebe"));
+        
+        Testes.linhas(34, "-", false);
+        System.out.println("| Materia   | Salario  ");
+        System.out.printf("| %5s  | %.2f |\n", getMateria(), getSalario());
+        Testes.linhas(34, "-", true);
+        System.out.printf("Obrigado por utilizar o programa %s \n", Professor.super.getNome());
+    }
     
 }

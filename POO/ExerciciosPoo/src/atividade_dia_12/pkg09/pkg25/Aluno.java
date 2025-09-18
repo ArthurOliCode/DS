@@ -36,12 +36,21 @@ public class Aluno extends Pessoa_main{
         }
     }
     
-    public void inserirMatricula(){
+    public void registro(){
        Scanner teclado = new Scanner(System.in);
+       Aluno.super.calcIdade();
+       
        Testes.titulo("Adicionando a matricula");
        setMatricula(Testes.testString(teclado, "Digite o numero da matricula por extenso", 13));
        System.out.println("Obrigado por registar!");
        Testes.linhas(18, "-", true);
+       
+       Testes.linhas(34, "-", false);
+       System.out.println("| Matricula   | Idade  ");
+       System.out.printf("| %s  | %d |\n", getMatricula(), getIdade());
+       Testes.linhas(34, "-", true);
+       System.out.printf("Obrigado por utilizar o programa %s \n", Aluno.super.getNome());
     }
+    
     
 }

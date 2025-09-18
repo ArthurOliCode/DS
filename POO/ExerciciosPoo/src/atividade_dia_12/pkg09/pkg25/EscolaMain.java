@@ -9,7 +9,7 @@ package atividade_dia_12.pkg09.pkg25;
  *
  * @author arthu_uhkw4r8
  */
-public class Main {
+public class EscolaMain {
 
     /**
      * @param args the command line arguments
@@ -22,16 +22,29 @@ public class Main {
         int idade = p[0].getIdade();
         System.out.printf("A idade e %d\n", idade);
         
-        Aluno alunos [] = new Aluno[10];
-        alunos[0] = new Aluno("Arthur", "121-357-963-14", 2009, 7, 20);
-        alunos[0].calcIdade();
-        alunos[0].inserirMatricula();
         */
         
+        Aluno alunos [] = new Aluno[10];
+        alunos[0] = new Aluno("Arthur", "121-357-963-14", 2007, 12, 18);
+        alunos[0].calcIdade();
+        alunos[0].registro();
+        System.out.printf("A impressao de 100 copias ficaria %.2f\n", alunos[0].tirarCopias(100));
+        
+        
+        /*
         Funcionario funcionarios [] = new Funcionario[10];
         funcionarios[0] = new Funcionario("Fabio", "983-173-753-48", 2005, 1, 28);
         funcionarios[0].calcIdade();
         funcionarios[0].registro();
+        System.out.printf("A impressao de 100 copias ficaria %.2f", funcionarios[0].tirarCopias(100));
+        
+        
+        Professor profs[] = new Professor[10];
+        profs[0] = new Professor("Antonio", "732-531-083-43", 1993, 5, 30);
+        profs[0].calcIdade();
+        profs[0].registro();
+        System.out.printf("A impressao de 100 copias ficaria %.2f", profs[0].tirarCopias(100));
+*/
     }
     
 }
