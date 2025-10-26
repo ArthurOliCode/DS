@@ -6,7 +6,7 @@ package javaapplication17;
 
 /**
  *
- * @author arthu_uhkw4r8
+ * @author ArthurOliCode
  */
 public class SalarioMinimo {
     

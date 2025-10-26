@@ -6,7 +6,7 @@ package javaapplication17;
 import java.util.Scanner;
 /**
  *
- * @author arthu_uhkw4r8
+* @author ArthurOliCode
  */
 public class TesteEntrada {
     Scanner teclado = new Scanner(System.in);

@@ -32,7 +32,7 @@ public class IdadeExtenso {
     }
 
     public void setMeses(int entrada) {
-        entrada = TesteEntrada.testInt(teclado, "Insira quantos meses você possue: ");
+        entrada = TesteEntrada.testInt(teclado, "Insira quantos meses voce possue: ");
         if (entrada >= 0 && entrada <= 12){
             this.meses = entrada;
         }
