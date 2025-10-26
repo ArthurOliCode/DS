@@ -4,10 +4,12 @@
  */
 package javaapplication17;
 
+
 /**
  *
  * @author ArthurOliCode
  */
 public class SalarioMinimo {
+   
     
 }
