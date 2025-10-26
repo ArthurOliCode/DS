@@ -61,4 +61,10 @@ public class TesteEntrada {
             }
         }
     }
+     
+      public static void titulo(String titulo){
+         linhas(titulo.length() * 2, "=", false);
+         System.out.printf("%4s %s \n", "", titulo);
+         linhas(titulo.length() * 2, "=", true);
+     }
 }

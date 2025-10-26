@@ -17,31 +17,52 @@ public class IdadeExtenso {
     int dias;
     int IdadeDias;
 
-    public IdadeExtenso(int meses, int anos, int dias) {
-        this.meses = meses;
-        this.anos = anos;
-        this.dias = dias;
+    public IdadeExtenso() {
+        System.out.println("\n\n Bem vindo!");
+        TesteEntrada.titulo("Indentifique quantos dias totais voce possue!");
+        
+        setAnos(anos);
+        setMeses(meses);
+        setDias(dias);
+        setIdadeDias(getDias(), getMeses(), getAnos());
+    }
+
+    public int getMeses() {
+        return meses;
+    }
+
+    public void setMeses(int entrada) {
+        entrada = TesteEntrada.testInt(teclado, "Insira quantos meses você possue: ");
+        if (entrada >= 0 && entrada <= 12){
+            this.meses = entrada;
+        }
+        
     }
 
     public int getAnos() {
         return anos;
     }
 
-    public void setAnos(int anos) {
-        this.anos = TesteEntrada.testInt(teclado, "Insira quantos anos você possue: ");
+    public void setAnos(int entrada) {
+        entrada = TesteEntrada.testInt(teclado, "Insira quantos anos voce possue: ");
+        if (entrada <= 120 && entrada >= 0){
+            this.anos = entrada ;
+        }else{
+            System.out.println("Insira uma quantidade válida de anos entre 0 e 120");
+        }
+        
     }
 
     public int getDias() {
         return dias;
     }
 
-    public void setDias(int dias) {
-        int entrada = TesteEntrada.testInt(teclado, "Insira quantos anos você possue: ");
-        if (entrada < 30 && entrada > 0){
+    public void setDias(int entrada) {
+        entrada = TesteEntrada.testInt(teclado, "Insira quantos dias voce possue: ");
+        if (entrada < 30 && entrada >= 0){
             this.dias = entrada;   
         }else{
-            System.out.println("Insira uma quantidade de dias válidos entre 1 e 29");
-            
+            System.out.println("Insira uma quantidade de dias válidos entre 0 e 29");
         }
     }
 
@@ -49,9 +70,18 @@ public class IdadeExtenso {
         return IdadeDias;
     }
 
-    public void setIdadeDias(int IdadeDias) {
-        this.IdadeDias = IdadeDias;
+    public void setIdadeDias(int dias, int meses, int anos) {
+        meses *= 30;
+        anos *= 365;
+        int idadeExtenso = dias + meses + anos;
+        this.IdadeDias = idadeExtenso;
     }
+
+    @Override
+    public String toString() {
+        return "IdadeExtenso{" + "meses=" + meses + ", anos=" + anos + ", dias=" + dias + ", IdadeDias=" + IdadeDias + '}';
+    }
+    
     
     
 }

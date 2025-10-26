@@ -14,7 +14,10 @@ public class JavaApplication17 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        IdadeExtenso idades[] = new IdadeExtenso[5];
+        idades[0] = new IdadeExtenso();
+        
+        System.out.printf("\n\n Idade por extenso: %s \n\n", idades[0].toString());
     }
     
 }
