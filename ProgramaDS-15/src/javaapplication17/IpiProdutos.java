@@ -20,6 +20,7 @@ public class IpiProdutos {
     Scanner teclado = new Scanner(System.in);
 
     public IpiProdutos() {
+        TesteEntrada.titulo("Bem vindo ao Imposto IPI!");
         setValorF();
     }
 
