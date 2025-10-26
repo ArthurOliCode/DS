@@ -16,6 +16,7 @@ public class Medias {
     int termos;
 
     public Medias() {
+        TesteEntrada.titulo("Bem vindo ao calculo de media entre medias!");
         setTermos();
         setQtdMedias();
         setMedia();
@@ -53,31 +54,29 @@ public class Medias {
     }
 
     public void setMedia() {
-        int contM = 0;
-        int contT = 0;
-        int somaMediaN = 0;
+        // Variáveis para o controle de loop
+        int contM = 0; // Cont Médias
+        int contT = 0; // Cont Termos
+        int somaMediaN = 0; // Soma média genérica
         int somaMediaF = 0;
         int mediaN = 0;
         
+        // Loop para qtd de médias
         while(contM < getQtdMedias()){
             while(contT < getTermos()){
                 int entrada = TesteEntrada.testInt(teclado, "Insira o termo " + (contT + 1) + ":");
                 somaMediaN += entrada;
-                System.out.println("Termo: " + entrada);
-                System.out.println("Soma N " + somaMediaN);
-                System.out.println("Cont T " + contT);
                 contT++;
             }
+            // Calculo da média genérica
             mediaN = somaMediaN / getTermos();
             somaMediaF += mediaN;
-            System.out.println("MediaN: " + mediaN);
-            System.out.println("Soma N: " + somaMediaN);
-            System.out.println("Termos: " + getTermos());
-            System.out.println("Cont M:" + contM);
             contM++;
+            // Reset das variáveis dentro do loop de Termos
             contT = 0;
             somaMediaN = 0;
         }
+        // Cálculo da média final
         this.media = somaMediaF / getQtdMedias();
     }
 
