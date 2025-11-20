@@ -2,15 +2,15 @@ package com.programads16;
 
 public abstract class Pessoa {
     int idade;
-    int cpf;
     int AnoMascimento;
+    double cpf;
     String nome;
 
     public int getIdade() {
         return idade;
     }
 
-    public int getCpf() {
+    public double getCpf() {
         return cpf;
     }
 
@@ -19,7 +19,7 @@ public abstract class Pessoa {
         this.idade = idade;
     }
 
-    public int getAnoMascimento() {
+    public int getAnoNascimento() {
         return AnoMascimento;
     }
 

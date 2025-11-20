@@ -59,10 +59,32 @@ public class Testes {
             }
         }
     }
+    
+    public static float testFloat(Scanner teclado, String msg){
+        float num;
 
+        while(true){
+            try{
+                System.out.println(msg);
+                String entrada = teclado.nextLine();
+
+                num = Float.parseFloat(entrada);
+                return num;
+
+            }catch(NumberFormatException e){
+                System.out.println("\n\nEntrada invalida, por favor, insira um numero valido");
+                linhas(50, "-", true);
+            }
+        }
+    }
+
+
+   
     public static void titulo(String titulo){
         linhas(titulo.length() * 2, "=", false);
         System.out.printf("%4s %s \n", "", titulo);
         linhas(titulo.length() * 2, "=", true);
     }
+    
+    
 }
